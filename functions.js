@@ -1,7 +1,9 @@
 
 async function loadVideos() {
     let videos = [];
-    let popURL = 'https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=50&key=AIzaSyBweceagLFZZgNKrv6CpIlb3yMfbw0OzbU';
+    // insert youtube api data key here
+    let apiKey = ""
+    let popURL = 'https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=50&key=' + apiKey;
     let response = await fetch(popURL);
     let data = await response.json();
     videos = videos.concat(data.items);
